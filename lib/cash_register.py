@@ -23,9 +23,10 @@ class CashRegister:
           print("There is no discount to apply.")
 
     def void_last_transaction(self):
-       self.items.pop()
-       price = self.prices.pop()
        last_quant = self.quants.pop()
+       for _ in range(last_quant):
+            self.items.pop()
+            price = self.prices.pop()
        self.total -= (price * last_quant)
 
 
